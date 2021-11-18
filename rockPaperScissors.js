@@ -1,6 +1,12 @@
 function computerPlay() {
     let selection = Math.floor(Math.random()*3) + 1;
-    console.log(selection);
+    if (selection === 1) {
+        return "rock";
+    } else if (selection === 2) {
+        return "paper";
+    } else if (selection === 3) {
+        return "scissors";
+    }
 }
 
-computerPlay();
+console.log(computerPlay());

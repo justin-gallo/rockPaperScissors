@@ -11,7 +11,7 @@ function computerPlay() {
     }
 }
 
-function play(playerSelection, computerSelection) {
+function play(playerSelection, computerSelection) { // Plays a single game.
     let playerSelectInsens = playerSelection.toLowerCase();
 
     if (playerSelectInsens === "rock") {
@@ -41,4 +41,45 @@ function play(playerSelection, computerSelection) {
     }
 }
 
-console.log(play(playerChoice, computerPlay()));
+function game() {
+    let playerWinCount = 0;
+    let playerLoseCount = 0;
+    let tieCount = 0;
+
+    for (let i = 1; i <= 5; i++) { //Run the play function five times and record results.
+        let result = play(playerChoice, computerPlay());
+        console.log(result);
+        
+        if (result.includes("win")) {
+            playerWinCount = ++playerWinCount;
+        } else if (result.includes("lose")) {
+            playerLoseCount = ++playerLoseCount;
+        } else if (result.includes('tie')) {
+            tieCount = ++tieCount;
+        }
+    }
+
+    if (playerWinCount > playerLoseCount) {
+        return `You win the match! Final score is: 
+        Player: ${playerWinCount}
+        Computer: ${playerLoseCount}
+        Ties: ${tieCount}`
+    } else if (playerWinCount < playerLoseCount) {
+        return `You lose the match! Final score is: 
+        Player: ${playerWinCount}
+        Computer: ${playerLoseCount}
+        Ties: ${tieCount}`
+    } else if (playerWinCount === playerLoseCount) {
+        return `The match is a tie! Final score is: 
+        Player: ${playerWinCount}
+        Computer: ${playerLoseCount}
+        Ties: ${tieCount}`
+    }
+
+    // To-do: 
+    // - Rework play() function to return a global variable.
+    // - Increment the value of playerWinCount, playerLoseCount, tieCount after each game. 
+    // - Compare counter variables, and return winner and loser of match with results. 
+}
+
+console.log(game());

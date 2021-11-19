@@ -1,5 +1,3 @@
-let playerChoice = "sCissors";
-
 function computerPlay() {
     let selection = Math.floor(Math.random()*3) + 1;
     if (selection === 1) {
@@ -11,7 +9,9 @@ function computerPlay() {
     }
 }
 
-function play(playerSelection, computerSelection) { // Plays a single game.
+function play(computerSelection) { // Plays a single game.
+    
+    let playerSelection = prompt("Rock, Paper, or Scissors?");
     let playerSelectInsens = playerSelection.toLowerCase();
 
     if (playerSelectInsens === "rock") {
@@ -47,7 +47,7 @@ function game() {
     let tieCount = 0;
 
     for (let i = 1; i <= 5; i++) { //Run the play function five times and record results.
-        let result = play(playerChoice, computerPlay());
+        let result = play(computerPlay());
         console.log(result);
         
         if (result.includes("win")) {

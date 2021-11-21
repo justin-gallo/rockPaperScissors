@@ -13,27 +13,54 @@ function playRound(playerSelection, computerSelection) { // Plays a single game.
 
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "paper") {
-            return `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "scissors") {
-            return `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "paper") {
-            return `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "scissors") {
-            return `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            return `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You lose! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "paper") {
-            return `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `You win! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         } else if (computerSelection === "scissors") {
-            return `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            const result = document.createElement('div');
+            result.classList.add('result');
+            result.textContent = `It's a tie! You chose: ${playerSelection}. The computer chose: ${computerSelection}.`;
+            resultContainer.appendChild(result);
         }
     }
 }
@@ -52,6 +79,8 @@ const scissorsBtn = document.querySelector('.scissors');
 scissorsBtn.addEventListener('click', () => {
     console.log(playRound('scissors', computerPlay()));
 });
+
+const resultContainer = document.querySelector('.resultContainer');
 
 // function game() {
 //     let playerWinCount = 0;

@@ -92,3 +92,19 @@ button.scissors {
 h1 {
     color: white;
 }
+
+.result {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.resultContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    padding-top: 32px;
+}

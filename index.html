@@ -10,18 +10,28 @@
 <body>
     <script src='rockPaperScissors.js' defer></script>
     <header>
-        <h1 class="title">Rock, Paper, Scissors, shoot!</h1>
+        <h1 class="title">Rock, Paper, Scissors...</h1>
         <ul class="linksContainer">
             <li><a href="https://github.com/therealwumbologist/rockPaperScissors">View on GitHub</a></li>
         </ul>
     </header>
-    <main>
+    <main id="main">
         <div class="buttonContainer">
-            <button class="rock">Rock</button>
-            <button class="paper">Paper</button>
-            <button class="scissors">Scissors</button>
+            <img src="images/rockNeon.png" width="200" height="200" class="rock glowRock">
+            <img src="images/paperNeon.png" width="200" height="200" class="paper glowPaper">
+            <img src="images/scissorsNeon.png" width="200" height="200" class="scissors glowScissors">
         </div>
-        <div class="resultContainer"></div>
+        <div class="resultContainer">
+            <div class="scoreContainer">
+                <div class="scoreHeader">YOUR WINS</div>
+                <div class="winCount">0</div>
+            </div>
+            <div class="scoreContainer">
+                <div class="scoreHeader">CPU WINS</div>
+                <div class="loseCount">0</div>
+            </div>
+        </div>
+        <div class="feedback">First to five wins will be victorious!</div>
     </main>
 </body>
 </html>

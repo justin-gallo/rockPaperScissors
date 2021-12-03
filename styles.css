@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    background-color: rgb(48, 48, 48);
+    background-color: black;
 }
 
 header {
@@ -12,7 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 150px;
-    background-color: rgb(24, 24, 24);
+    background-color: black;
     padding: 0px 30px 0px 30px;
 }
 
@@ -36,6 +36,10 @@ a:hover {
 
 main {
     padding: 60px 30px 30px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .buttonContainer {
@@ -46,47 +50,37 @@ main {
     gap: 30px;
 }
 
-button.rock {
-    background-image: url('images/therock.jpg');
-    background-size: cover;
-    color:white;
-    font-weight: bold;
-    font-size: 30px;
-    text-shadow: 0 0 10px black;
-    height: 200px;
-    width: 200px;
-    border-radius: 4px;
-    border-width: 2px;
-    border-color: black;
+img.rock {
+    transition: all 0.2s ease-in-out;
 }
 
-button.paper {
-    background-image: url('images/paper.jpg');
-    background-size: cover;
-    color:white;
-    font-weight: bold;
-    font-size: 30px;
-    text-shadow: 0 0 10px black;
-    height: 200px;
-    width: 200px;
-    border-radius: 4px;
-    border-width: 2px;
-    border-color: black;
+img.paper {
+    transition: all 0.2s ease-in-out;
 }
 
-button.scissors {
-    background-image: url('images/scissors2.jpeg');
-    background-size: cover;
-    background-position: center;
-    color:white;
-    font-weight: bold;
-    font-size: 30px;
-    text-shadow: 0 0 10px black;
-    height: 200px;
-    width: 200px;
-    border-radius: 4px;
-    border-width: 2px;
-    border-color: rgb(170, 47, 47);
+img.scissors {
+    transition: all 0.2s ease-in-out;
+}
+
+.glowRock:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(255, 0, 221, 0.5))
+                    drop-shadow(0 0 5px rgba(255, 0, 221, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 0, 221, 0.5))
+            drop-shadow(0 0 5px rgba(255, 0, 221, 0.5));
+}
+
+.glowPaper:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 195, 255, 0.5))
+                    drop-shadow(0 0 5px rgba(0, 195, 255, 0.5));
+    filter: drop-shadow(0 0 5px rgba(0, 195, 255, 0.5))
+            drop-shadow(0 0 5px rgba(0, 195, 255, 0.5));
+}
+
+.glowScissors:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.5))
+                    drop-shadow(0 0 5px rgba(255, 230, 0, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 230, 0, 0.5))
+            drop-shadow(0 0 5px rgba(255, 230, 0, 0.5));
 }
 
 h1 {
@@ -102,9 +96,62 @@ h1 {
 
 .resultContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 32px;
-    padding-top: 32px;
+    justify-content: center;
+    gap: 64px;
+    padding-top: 128px;
 }
+
+.scoreContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    gap: 12px;
+}
+
+.scoreHeader {
+    font-weight: bold;
+}
+
+.feedback {
+    color: white;
+    font-size: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.winCount .loseCount .tieCount {
+    transition: all 0.5s ease-in-out;
+}
+
+.glowCount {
+    -webkit-filter: drop-shadow(0 0 10px white)
+                    drop-shadow(0 0 10px white);
+    filter: drop-shadow(0 0 10px white)
+            drop-shadow(0 0 10px white);
+    transition: all 0.2s ease-in-out;
+}
+
+button.reset {
+    width: 200px;
+    height: 65px;
+    background-color:rgba(0, 0, 0);
+    color: rgb(247, 99, 99);
+    font-size: 18px;
+    border-width: 2px;
+    border-color: rgb(247, 99, 99);
+    border-radius: 16px;
+}
+
+button.resetHover:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5))
+                    drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5))
+            drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+    transition: all 0.2s ease-in-out;
+}
+
